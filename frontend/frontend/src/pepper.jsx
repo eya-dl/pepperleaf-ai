@@ -4,7 +4,8 @@ import React, { useState, useRef, useCallback } from "react";
 // POST http://localhost:8000/predict  (multipart/form-data, champ "file")
 // -> { class: "Early Blight" | "Late Blight" | "Healthy", confidence: 0.0-1.0 }
 
-const API_URL = "http://localhost:8000/predict";
+const API_URL = `${import.meta.env.VITE_API_URL}/predict`;
+
 
 const STATUS_STYLES = {
   "Pepper__bell___Bacterial_spot": { color: "#f50909", bg: "#EAF2E6", label: "Feuille malade" },

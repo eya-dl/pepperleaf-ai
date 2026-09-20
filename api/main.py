@@ -6,19 +6,18 @@ from io import BytesIO
 from PIL import Image
 import requests
 import os
-
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
-
 
 # ============================================================
 # CORS
 # ============================================================
 
 origins = [
-    "http://localhost",
     "http://localhost:3000",
     "http://localhost:5173",
+    "http://localhost:5175",
 ]
 
 app.add_middleware(
