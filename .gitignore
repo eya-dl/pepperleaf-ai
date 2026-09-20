@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.venv/
+tfserving-env/
+env/
+
+# Environment variables
+.env
+.env.*
+
+# Node
+node_modules/
+frontend/frontend/node_modules/
+
+# React / Vite
+dist/
+frontend/frontend/dist/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Python cache / test
+.pytest_cache/
+.coverage
+
+# Temporary files
+*.tmp
+*.temp
+
+# Local test images
+test.webp
+
+# Training data
+training/

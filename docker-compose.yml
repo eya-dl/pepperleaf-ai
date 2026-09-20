@@ -1,0 +1,29 @@
+services:
+
+  tensorflow-serving:
+    image: tensorflow/serving
+    container_name: pepperleaf-tensorflow
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./models/pepper_model:/models/pepper_model
+    environment:
+      - MODEL_NAME=pepper_model
+
+  api:
+    build: ./api
+    container_name: pepperleaf-api
+    ports:
+      - "8000:8000"
+    environment:
+      - TF_SERVING_URL=http://tensorflow-serving:8501/v1/models/pepper_model:predict
+    depends_on:
+      - tensorflow-serving
+
+  frontend:
+      build: ./frontend/frontend
+      container_name: pepperleaf-frontend
+      ports:
+        - "5173:5173"
+      depends_on:
+        - api
