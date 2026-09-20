@@ -55,6 +55,8 @@ jobs:
         with:
           context: ./frontend/frontend
           push: true
+          build-args: |
+            VITE_API_URL=http://localhost:8000
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/pepperleaf-frontend:latest
             ${{ secrets.DOCKERHUB_USERNAME }}/pepperleaf-frontend:${{ github.sha }}
